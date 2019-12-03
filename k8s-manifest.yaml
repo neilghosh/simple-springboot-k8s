@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-spring
+  name: super-simple-deployment
 spec:
   replicas: 3
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: neilghosh/hello-spring
+          image: neilghosh/super-simple-service:v1
           ports:
             - name: http
               containerPort: 8080
@@ -22,7 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-spring
+  name: super-simple-k8s-svc
   labels:
     app: app
 spec:

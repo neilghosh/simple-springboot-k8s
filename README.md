@@ -1,22 +1,24 @@
 ## Build
-
-docker build . -t neilghosh/hello-spring
-
+```
+docker build . -t neilghosh/super-simple-svc:v1
+```
 ## Run
-
-docker run -p 8080:8080  -t neilghosh/hello-spring
-
+```
+docker run -p 8080:8080  -t neilghosh/super-simple-svc:v1
+```
 ## Deploy 
 ```
-kubectl create deployment hello-spring --image=neilghosh/hello-spring
+docker push neilghosh/super-simple-svc:v1
 
-kubectl expose deployment hello-spring --type=NodePort --port 80 --target-port 8080
+kubectl create deployment super-simple-deployment --image=neilghosh/super-simple-svc:v1
 
-kubectl scale deployment hello-spring --replicas=3
+kubectl expose deployment super-simple-deployment --type=NodePort --port 80 --target-port 8080
 
-minikube service hello-spring --url
+kubectl scale deployment super-simple-deployment --replicas=3
 
-kubectl set image deployment/hello-spring hello-spring=neilghosh/hello-spring
+minikube service super-simple-deployment --url
+
+kubectl set image deployment/super-simple-deployment super-simple-svc=neilghosh/super-simple-servicev2
 ```
 
 ## Deploy via Manifest 
