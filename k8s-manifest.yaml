@@ -1,9 +1,3 @@
-# kubectl create deployment hello-spring --image=neilghosh/hello-spring
-# kubectl expose deployment hello-spring --type=NodePort --port 80 --target-port 8080
-# kubectl scale deployment hello-spring --replicas=3
-# kubectl set image deployment/hello-web hello-app=gcr.io/${PROJECT_ID}/hello-app:v2
-# minikube service hello-spring --url
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
