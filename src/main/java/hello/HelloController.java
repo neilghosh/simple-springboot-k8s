@@ -8,7 +8,7 @@ public class HelloController {
 	
 	@RequestMapping("/")
 	public String index() {
-		return "Hello GDG Hyderabad";
+		return "<font size=48 color=red>Hello GDG Hyderabad V1</font>";
 	}
 	
 }
